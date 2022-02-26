@@ -1,24 +1,24 @@
-class experiment2
+import java.util.*;
+import java.io.*;
+class fileexp
 {
-	public static void main(String[] args )
-	{
-		try{
-			int b = 100;
-			if(b<500)
-				throw new balanceException();
-		
-		}
-		catch(balanceException e)
-		{
-			System.out.println(e);
-		}
-	}
+ public static void main(String args[])
+ {
+  System.out.println("Opening file..");
+  try{
+  FileInputStream f= new FileInputStream("test.txt");
+  System.out.println("File opened");
+  }
+  catch(FileNotFoundException e)
+  {
+   System.out.println(e);
+  } 
+ }
 }
 
-class balanceException extends Exception
-{
-	balanceException()
-	{
-		System.out.print("Low balance ");
-	}
-}
+
+/*
+Output:
+Opening file..
+java.io.FileNotFoundException: test.txt (No such file or directory)
+*/
